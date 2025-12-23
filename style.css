@@ -94,7 +94,7 @@ header.site-header {
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
-  transform: rotate(45deg) translateY(9px);
+  transform: translateY(9px) rotate(45deg);
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
@@ -103,7 +103,7 @@ header.site-header {
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
-  transform: rotate(-45deg) translateY(-9px);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 .mobile-menu-toggle:hover .hamburger-line {
@@ -1085,6 +1085,7 @@ footer.footer p {
   .hero-buttons {
     flex-direction: column;
     gap: 15px;
+    align-items: center;
   }
   
   .btn {
