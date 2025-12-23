@@ -1,2 +1,2 @@
 # BBs-Bakery
-https://dylanjdev.github.io/BBs-Bakery/
+https://www.bbs-bakery.com/
