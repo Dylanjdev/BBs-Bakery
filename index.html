@@ -7,7 +7,7 @@
   <!-- Primary Meta Tags -->
   <title>BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA</title>
   <meta name="title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
-  <meta name="description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Saturday 6AM-2PM. Call (276) 571-0891 to order!">
+  <meta name="description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM. Call (276) 571-0891 to order!">
   <meta name="keywords" content="bakery, cafe, Pennington Gap, Virginia, fresh bread, pastries, baked goods, cinnamon rolls, muffins, local bakery, Lee County">
   <meta name="author" content="BB's Bakery & Cafe">
   
@@ -18,7 +18,7 @@
   <meta property="og:type" content="business.business">
   <meta property="og:url" content="https://bbsbakeryandcafe.com/">
   <meta property="og:title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
-  <meta property="og:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Saturday 6AM-2PM.">
+  <meta property="og:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM.">
   <meta property="og:image" content="https://bbsbakeryandcafe.com/CoverPhoto.jpg">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="BB's Bakery & Cafe">
@@ -32,7 +32,7 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://bbsbakeryandcafe.com/">
   <meta property="twitter:title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
-  <meta property="twitter:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Saturday 6AM-2PM.">
+  <meta property="twitter:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM.">
   <meta property="twitter:image" content="https://bbsbakeryandcafe.com/CoverPhoto.jpg">
   
   <!-- Mobile & Browser -->
@@ -89,8 +89,14 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "06:00",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
         "closes": "14:00"
       }
     ],
@@ -260,10 +266,10 @@
     </div>
     <div class="hours-content">
       <div class="hours-main">
-        <p class="hours-time">6:00 AM – 2:00 PM</p>
-        <p class="hours-days">Monday – Saturday</p>
+        <p class="hours-time">Monday - Friday: 7:00 AM – 2:00 PM</p>
+        <p class="hours-time">Saturday: 8:00 AM – 2:00 PM</p>
       </div>
-      <p class="hours-note">Closed Sundays</p>
+      <p class="hours-note">Sunday: Closed</p>
     </div>
   </section>
 
@@ -351,11 +357,12 @@
       const minutes = now.getMinutes();
       const currentTime = hours + minutes / 60;
       
-      // Check if it's Monday-Saturday (1-6) and between 6 AM and 2 PM
-      const isWeekday = day >= 1 && day <= 6;
-      const isOpenHours = currentTime >= 6 && currentTime < 14;
+      // Check hours: Mon-Fri 7AM-2PM, Sat 8AM-2PM
+      const isMondayToFriday = day >= 1 && day <= 5;
+      const isSaturday = day === 6;
+      const isOpenHours = (isMondayToFriday && currentTime >= 7 && currentTime < 14) || (isSaturday && currentTime >= 8 && currentTime < 14);
       
-      if (isWeekday && isOpenHours) {
+      if (isOpenHours) {
         statusBadge.classList.add('open');
         statusBadge.classList.remove('closed');
         statusText.textContent = 'OPEN NOW';
@@ -365,16 +372,19 @@
         
         if (day === 0) {
           // Sunday - opens Monday
-          statusText.textContent = 'CLOSED - Opens Monday 6:00 AM';
+          statusText.textContent = 'CLOSED - Opens Monday 7:00 AM';
         } else if (day === 6 && currentTime >= 14) {
           // Saturday after 2 PM - opens Monday
-          statusText.textContent = 'CLOSED - Opens Monday 6:00 AM';
-        } else if (currentTime < 6) {
-          // Before opening hours - opens today
-          statusText.textContent = 'CLOSED - Opens at 6:00 AM';
+          statusText.textContent = 'CLOSED - Opens Monday 7:00 AM';
+        } else if (day === 6 && currentTime < 8) {
+          // Saturday before 8 AM
+          statusText.textContent = 'CLOSED - Opens at 8:00 AM';
+        } else if (currentTime < 7) {
+          // Before opening hours Mon-Fri
+          statusText.textContent = 'CLOSED - Opens at 7:00 AM';
         } else {
           // After closing hours on weekday - opens tomorrow
-          statusText.textContent = 'CLOSED - Opens Tomorrow 6:00 AM';
+          statusText.textContent = 'CLOSED - Opens Tomorrow 7:00 AM';
         }
       }
     }
