@@ -95,6 +95,7 @@ header.site-header {
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
+  background: var(--dark-green);
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
@@ -104,6 +105,7 @@ header.site-header {
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+  background: var(--dark-green);
 }
 
 .mobile-menu-toggle:hover .hamburger-line {
@@ -111,7 +113,7 @@ header.site-header {
 }
 
 .mobile-menu-toggle.active:hover .hamburger-line {
-  background: var(--light-pink);
+  background: var(--dark-green);
 }
 
 .mobile-overlay {
