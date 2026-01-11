@@ -1,0 +1,21 @@
+{
+  "name": "BB's Bakery & Cafe",
+  "short_name": "BB's Bakery",
+  "description": "Fresh-baked breads, pastries, and treats daily in Pennington Gap, VA",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#8B4513",
+  "background_color": "#FAF3E0",
+  "display": "standalone",
+  "start_url": "/"
+}

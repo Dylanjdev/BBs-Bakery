@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://bbsbakeryandcafe.com/sitemap.xml
+Sitemap: https://www.bbs-bakery.com/sitemap.xml
 
 # Crawl delay (optional, helps prevent overload)
 Crawl-delay: 1
