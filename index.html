@@ -10,16 +10,21 @@
   <meta name="description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM. Call (276) 571-0891 to order!">
   <meta name="keywords" content="bakery, cafe, Pennington Gap, Virginia, fresh bread, pastries, baked goods, cinnamon rolls, muffins, local bakery, Lee County">
   <meta name="author" content="BB's Bakery & Cafe">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://bbsbakeryandcafe.com/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="business.business">
   <meta property="og:url" content="https://bbsbakeryandcafe.com/">
   <meta property="og:title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
   <meta property="og:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM.">
-  <meta property="og:image" content="https://bbsbakeryandcafe.com/CoverPhoto.jpg">
+  <meta property="og:image" content="https://bbsbakeryandcafe.com/CoverPhoto.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fresh baked pastries and breads at BB's Bakery & Cafe">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="BB's Bakery & Cafe">
   <meta property="business:contact_data:street_address" content="103 Main St">
@@ -33,7 +38,8 @@
   <meta property="twitter:url" content="https://bbsbakeryandcafe.com/">
   <meta property="twitter:title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
   <meta property="twitter:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM.">
-  <meta property="twitter:image" content="https://bbsbakeryandcafe.com/CoverPhoto.jpg">
+  <meta property="twitter:image" content="https://bbsbakeryandcafe.com/CoverPhoto.webp">
+  <meta property="twitter:image:alt" content="Fresh baked pastries and breads at BB's Bakery & Cafe">
   
   <!-- Mobile & Browser -->
   <meta name="theme-color" content="#8B4513">
@@ -102,8 +108,54 @@
     ],
     "servesCuisine": "Bakery, Cafe",
     "menu": "https://bbsbakeryandcafe.com/#menu",
+    "acceptsReservations": "False",
+    "paymentAccepted": "Cash, Credit Card, Debit Card",
+    "currenciesAccepted": "USD",
+    "hasMap": "https://www.google.com/maps?q=103+Main+St,+Pennington+Gap,+VA+24277",
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61581654642389"
+    ]
+  }
+  </script>
+  
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are BB's Bakery & Cafe hours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BB's Bakery & Cafe is open Monday-Friday from 7:00 AM to 2:00 PM and Saturday from 8:00 AM to 2:00 PM. We are closed on Sundays."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is BB's Bakery & Cafe located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are located at 103 Main St, Pennington Gap, Virginia 24277."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BB's Bakery & Cafe take phone orders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Call us at (276) 571-0891 to place your order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does BB's Bakery & Cafe serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve fresh-baked breads, pastries, muffins, cinnamon rolls, breakfast sandwiches, specialty coffee drinks, and loaded energy drinks. Everything is made fresh daily."
+        }
+      }
     ]
   }
   </script>
@@ -128,7 +180,7 @@
   </header>
   <div class="mobile-overlay"></div>
 
-  <section class="hero">
+  <section class="hero" aria-label="Welcome banner">
     <div class="cover-photo">
       <img src="CoverPhoto.jpg" alt="Fresh baked pastries and breads at BB's Bakery & Cafe in Pennington Gap, Virginia" width="1200" height="600" fetchpriority="high" />
     </div>
@@ -143,8 +195,8 @@
     </div>
   </section>
 
-  <section id="about" class="info-section about-section">
-    <h2><i class="fa-solid fa-heart"></i> About Us</h2>
+  <section id="about" class="info-section about-section" aria-labelledby="about-heading">
+    <h2 id="about-heading"><i class="fa-solid fa-heart"></i> About Us</h2>
     <p class="about-intro">At BB's Bakery & Cafe, we believe every morning deserves something special. That's why we bake fresh pastries, breads, and treats daily, using quality ingredients and time-honored recipes.</p>
     <div class="about-highlights">
       <div class="highlight">
@@ -165,9 +217,9 @@
     </div>
   </section>
 
-  <section id="menu" class="info-section menu-section">
+  <section id="menu" class="info-section menu-section" aria-labelledby="menu-heading">
     <header class="menu-header">
-      <h2>Our Menu</h2>
+      <h2 id="menu-heading">Our Menu</h2>
       <p class="tagline">Bringing the best bites to your day</p>
     </header>
 
@@ -455,8 +507,8 @@
     </div>
   </section>
 
-  <section id="hours" class="info-section hours-section">
-    <h2><i class="fa-solid fa-clock"></i> Hours</h2>
+  <section id="hours" class="info-section hours-section" aria-labelledby="hours-heading">
+    <h2 id="hours-heading"><i class="fa-solid fa-clock"></i> Hours</h2>
     <div class="status-badge" id="statusBadge">
       <span class="status-dot"></span>
       <span class="status-text">Checking...</span>
@@ -470,8 +522,8 @@
     </div>
   </section>
 
-  <section id="contact" class="info-section contact-section">
-    <h2><i class="fa-solid fa-address-book"></i> Contact</h2>
+  <section id="contact" class="info-section contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading"><i class="fa-solid fa-address-book"></i> Contact</h2>
     <div class="contact-grid" itemscope itemtype="https://schema.org/Bakery">
       <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong><br><span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">103 Main St</span>, <span itemprop="addressLocality">Pennington Gap</span>, <span itemprop="addressRegion">Virginia</span> <span itemprop="postalCode">24277</span></span></p>
       <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong><br><a href="tel:2765710891" itemprop="telephone">(276) 571-0891</a></p>
@@ -497,7 +549,7 @@
   </section>
 
   <footer class="footer">
-    <p>© 2025 BB’s Bakery & Cafe — Made with ♥</p>    <p class="built-by">Built by <a href="https://smithdigitals.com" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>  </footer>
+    <p>© <span id="currentYear"></span> BB's Bakery & Cafe — Made with ♥</p>    <p class="built-by">Built by <a href="https://smithdigitals.com" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>  </footer>
   <script defer>
     // Mobile menu toggle
     const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -592,6 +644,9 @@
 
     // Initialize features when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
       highlightTodaySpecial();
       updateOpenStatus();
       

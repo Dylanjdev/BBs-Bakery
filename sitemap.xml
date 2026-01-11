@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://bbsbakeryandcafe.com/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bbsbakeryandcafe.com/logo.jpg</image:loc>
+      <image:title>BB's Bakery & Cafe Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bbsbakeryandcafe.com/CoverPhoto.jpg</image:loc>
+      <image:title>Fresh Baked Goods at BB's Bakery</image:title>
+    </image:image>
+  </url>
+</urlset>
