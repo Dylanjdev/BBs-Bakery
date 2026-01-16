@@ -198,6 +198,7 @@
       <div class="hero-buttons">
         <a href="#menu" class="btn btn-primary">View Menu</a>
         <a href="tel:2765710891" class="btn btn-secondary" aria-label="Call BB's Bakery"><i class="fa-solid fa-phone"></i> Order Now</a>
+        <a href="#preorder" class="btn btn-valentine"><i class="fa-solid fa-heart"></i> Pre-Order Valentine Menu</a>
       </div>
     </div>
   </section>
@@ -514,6 +515,87 @@
     </div>
   </section>
 
+  <section id="preorder" class="info-section preorder-section" aria-labelledby="preorder-heading">
+    <h2 id="preorder-heading"><i class="fa-solid fa-calendar-check"></i> Pre-Order Available</h2>
+    <p class="preorder-intro">Planning something special? Pre-order your favorites and we'll have them ready for you!</p>
+    
+    <div class="preorder-images">
+      <div class="preorder-image-wrapper" data-image="PreOrderMenu.jpg">
+        <img src="PreOrderMenu.jpg" alt="BB's Bakery Pre-Order Menu - Special items available for pre-order" loading="lazy" />
+        <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
+      </div>
+      <div class="preorder-image-wrapper" data-image="PreOrderMenuPrices.jpg">
+        <img src="PreOrderMenuPrices.jpg" alt="BB's Bakery Pre-Order Menu Prices - Pricing for pre-order items" loading="lazy" />
+        <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
+      </div>
+    </div>
+    
+    <div class="preorder-cta">
+      <p><strong>Ready to order?</strong> Pre-order your Valentine's favorites today!</p>
+      <button id="preorderBtn" class="btn btn-primary preorder-btn">Pre-Order Now</button>
+    </div>
+  </section>
+
+  <!-- Pre-Order Modal -->
+  <div id="preorderModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2><i class="fa-solid fa-shopping-cart"></i> Pre-Order Menu</h2>
+      <p class="modal-subtitle">Select an item to pre-order</p>
+      
+      <div class="preorder-menu-items">
+        <!-- Placeholder items - replace with actual Stripe links -->
+        <div class="preorder-item">
+          <h3>Chocolate Covered Strawberries</h3>
+          <p>Delicious strawberries dipped in chocolate</p>
+          <a href="#" class="preorder-link">Coming Soon</a>
+        </div>
+        
+        <div class="preorder-item">
+          <h3>Red Velvet Cookies</h3>
+          <p>Rich and decadent red velvet cookies</p>
+          <a href="#" class="preorder-link">Coming Soon</a>
+        </div>
+        
+        <div class="preorder-item">
+          <h3>Raspberry White Chocolate Scones</h3>
+          <p>Fresh scones with raspberry & white chocolate</p>
+          <a href="#" class="preorder-link">Coming Soon</a>
+        </div>
+        
+        <div class="preorder-item">
+          <h3>Strawberry & Chocolate Cream Danishes</h3>
+          <p>Flaky danishes filled with strawberry & chocolate cream</p>
+          <a href="#" class="preorder-link">Coming Soon</a>
+        </div>
+        
+        <div class="preorder-item">
+          <h3>Berries & Cream Croissants</h3>
+          <p>Buttery croissants with fresh berries & cream</p>
+          <a href="#" class="preorder-link">Coming Soon</a>
+        </div>
+        
+        <div class="preorder-item">
+          <h3>Valentine's Brownies</h3>
+          <p>Special Valentine's Day themed brownies</p>
+          <a href="#" class="preorder-link">Coming Soon</a>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <p><i class="fa-solid fa-info-circle"></i> Or call us at <a href="tel:2765710891">(276) 571-0891</a> to place your order</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Viewer Modal -->
+  <div id="imageModal" class="modal image-modal">
+    <span class="modal-close image-modal-close">&times;</span>
+    <div class="image-modal-content">
+      <img id="modalImage" src="" alt="Expanded view" />
+    </div>
+  </div>
+
   <section id="hours" class="info-section hours-section" aria-labelledby="hours-heading">
     <h2 id="hours-heading"><i class="fa-solid fa-clock"></i> Hours</h2>
     <div class="status-badge" id="statusBadge">
@@ -649,6 +731,28 @@
       }
     }
 
+    // Pre-order modal functionality
+    const modal = document.getElementById('preorderModal');
+    const btn = document.getElementById('preorderBtn');
+    const closeBtn = document.querySelector('.modal-close');
+
+    btn.addEventListener('click', () => {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
     // Initialize features when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
       // Set current year in footer
@@ -659,6 +763,33 @@
       
       // Update status every minute
       setInterval(updateOpenStatus, 60000);
+
+      // Image modal functionality
+      const imageModal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const imageCloseBtn = document.querySelector('.image-modal-close');
+      const imageWrappers = document.querySelectorAll('.preorder-image-wrapper');
+
+      imageWrappers.forEach(wrapper => {
+        wrapper.addEventListener('click', () => {
+          const imageSrc = wrapper.getAttribute('data-image');
+          modalImage.src = imageSrc;
+          imageModal.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      imageCloseBtn.addEventListener('click', () => {
+        imageModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      });
+
+      window.addEventListener('click', (e) => {
+        if (e.target === imageModal) {
+          imageModal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
     });
   </script></body>
 </html>
