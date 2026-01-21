@@ -13,10 +13,10 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   
   <!-- Canonical URL -->
@@ -28,7 +28,7 @@
   <meta property="og:url" content="https://www.bbs-bakery.com/">
   <meta property="og:title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
   <meta property="og:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM.">
-  <meta property="og:image" content="https://www.bbs-bakery.com/CoverPhoto.webp">
+  <meta property="og:image" content="https://www.bbs-bakery.com/assets/images/CoverPhoto.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Fresh baked pastries and breads at BB's Bakery & Cafe">
@@ -45,7 +45,7 @@
   <meta property="twitter:url" content="https://www.bbs-bakery.com/">
   <meta property="twitter:title" content="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, VA">
   <meta property="twitter:description" content="Fresh-baked breads, pastries, and treats daily at BB's Bakery & Cafe in Pennington Gap, Virginia. Open Monday-Friday 7AM-2PM, Saturday 8AM-2PM.">
-  <meta property="twitter:image" content="https://www.bbs-bakery.com/CoverPhoto.webp">
+  <meta property="twitter:image" content="https://www.bbs-bakery.com/assets/images/CoverPhoto.webp">
   <meta property="twitter:image:alt" content="Fresh baked pastries and breads at BB's Bakery & Cafe">
   
   <!-- Mobile & Browser -->
@@ -61,8 +61,8 @@
   <meta name="ICBM" content="36.75833, -83.02847">
   
   <!-- Preload Critical Resources -->
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="logo.jpg" as="image">
+  <link rel="preload" href="assets/css/style.css" as="style">
+  <link rel="preload" href="assets/images/logo.jpg" as="image">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +71,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   
   <!-- Icons (Async) -->
   <script src="https://kit.fontawesome.com/d105c3cb1d.js" crossorigin="anonymous" async></script>
@@ -82,7 +82,7 @@
     "@context": "https://schema.org",
     "@type": "Bakery",
     "name": "BB's Bakery & Cafe",
-    "image": "https://www.bbs-bakery.com/logo.jpg",
+    "image": "https://www.bbs-bakery.com/assets/images/logo.jpg",
     "url": "https://www.bbs-bakery.com",
     "telephone": "+12765710891",
     "priceRange": "$3.50-$8.00",
@@ -170,7 +170,7 @@
 <body>
   <header class="site-header">
     <div class="logo">
-      <img src="logo.jpg" alt="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, Virginia" width="150" height="150" fetchpriority="high" />
+      <img src="assets/images/logo.jpg" alt="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, Virginia" width="150" height="150" fetchpriority="high" />
     </div>
     <button class="mobile-menu-toggle" aria-label="Toggle menu">
       <span class="hamburger-line"></span>
@@ -189,7 +189,7 @@
 
   <section class="hero" aria-label="Welcome banner">
     <div class="cover-photo">
-      <img src="CoverPhoto.jpg" alt="Fresh baked pastries and breads at BB's Bakery & Cafe in Pennington Gap, Virginia" width="1200" height="600" fetchpriority="high" />
+      <img src="assets/images/CoverPhoto.jpg" alt="Fresh baked pastries and breads at BB's Bakery & Cafe in Pennington Gap, Virginia" width="1200" height="600" fetchpriority="high" />
     </div>
     <div class="hero-content">
       <h1>Welcome to BB's Bakery & Cafe</h1>
@@ -512,12 +512,12 @@
     <p class="preorder-intro" style="font-style: italic; color: var(--green); margin-top: -10px; padding: 15px 25px; background: rgba(151, 185, 138, 0.1); border-radius: 12px; border-left: 4px solid var(--green); font-size: 0.95rem;"><i class="fa-solid fa-info-circle" style="margin-right: 8px;"></i>All prices include 8% tax that goes to the town.</p>
     
     <div class="preorder-images">
-      <div class="preorder-image-wrapper" data-image="PreOrderMenu.jpg">
-        <img src="PreOrderMenu.jpg" alt="BB's Bakery Pre-Order Menu - Special items available for pre-order" loading="lazy" />
+      <div class="preorder-image-wrapper" data-image="assets/images/PreOrderMenu.jpg">
+        <img src="assets/images/PreOrderMenu.jpg" alt="BB's Bakery Pre-Order Menu - Special items available for pre-order" loading="lazy" />
         <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
       </div>
-      <div class="preorder-image-wrapper" data-image="PreOrderMenuPrices.jpg">
-        <img src="PreOrderMenuPrices.jpg" alt="BB's Bakery Pre-Order Menu Prices - Pricing for pre-order items" loading="lazy" />
+      <div class="preorder-image-wrapper" data-image="assets/images/PreOrderMenuPrices.jpg">
+        <img src="assets/images/PreOrderMenuPrices.jpg" alt="BB's Bakery Pre-Order Menu Prices - Pricing for pre-order items" loading="lazy" />
         <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
       </div>
     </div>
