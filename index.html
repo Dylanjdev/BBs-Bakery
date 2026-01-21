@@ -233,46 +233,16 @@
 
     <div class="menu-divider"></div>
 
-    <div class="menu-content">
-      <!-- LEFT COLUMN -->
-      <div class="menu-column">
-        <h3><i class="fa-solid fa-bread-slice"></i> Breads</h3>
-
-        <div class="menu-item">
-          <div>
-            <h4>White Bread</h4>
-            <p>white flour + butter + salt</p>
-          </div>
-          <span class="price">$7.00</span>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Cinnamon Raisin Bread</h4>
-            <p>flour + brown sugar + butter + cinnamon + raisins</p>
-          </div>
-          <span class="price">$8.00</span>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Cheddar Jalapeño Focaccia</h4>
-            <p>flour + olive oil + salt + cheddar + jalapeño</p>
-          </div>
-          <span class="price">$8.00</span>
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="menu-column">
-        <h3><i class="fa-solid fa-cake-candles"></i> Baked Goods</h3>
-
+    <div class="menu-content" style="display: block;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700; text-align: center; padding-bottom: 20px; border-bottom: 2px solid var(--green);"><i class="fa-solid fa-cake-candles" style="margin-right: 12px; color: var(--green);"></i> Baked Goods</h3>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
         <div class="menu-special">
           <h4>Special of the Day</h4>
           <ul>
             <li data-day="0">Sunday – Closed</li>
             <li data-day="1"><i class="fa-solid fa-croissant"></i> Monday – Croissants</li>
-            <li data-day="2"><i class="fa-solid fa-mug-hot"></i> Tuesday – 10$ Coffee Cake & Small/Medium Coffee (Hot or Iced)</li>
+            <li data-day="2"><i class="fa-solid fa-mug-hot"></i> Tuesday – $10 Coffee Cake & Small/Medium Coffee (Hot or Iced)</li>
             <li data-day="3"><i class="fa-solid fa-cookie"></i> Wednesday – Danishes</li>
             <li data-day="4"><i class="fa-solid fa-blender"></i> Thursday – $7 Frappee</li>
             <li data-day="6"><i class="fa-solid fa-star"></i> Saturday – Baker's Choice</li>
@@ -316,7 +286,7 @@
             <h4>Coffee Cake</h4>
             <p>flour + butter + eggs + sugar + cinnamon streusel</p>
           </div>
-          <span class="price">$4.50</span>
+          <span class="price">$4.50 <small style="opacity: 0.8; font-size: 0.85em;">/slice</small></span>
         </div>
       </div>
     </div>
@@ -420,7 +390,12 @@
         </div>
       </div>
 
-      <p class="menu-subtitle" style="text-align: center; font-size: 1.3rem; color: var(--green); font-weight: 600; margin-top: 30px;">Sizing & Pricing: 32 oz - $8.00</p>
+      <div style="background: linear-gradient(135deg, rgba(151, 185, 138, 0.15) 0%, rgba(151, 185, 138, 0.05) 100%); padding: 25px 35px; border-radius: 20px; margin-top: 35px; border: 2px solid rgba(151, 185, 138, 0.4); box-shadow: 0 6px 20px rgba(46, 78, 31, 0.08);">
+        <p style="text-align: center; font-size: 1.5rem; color: var(--dark-green); font-weight: 700; margin: 0; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-tags" style="color: var(--green); margin-right: 12px;"></i>
+          <span style="font-size: 1.3rem;">32 oz</span> <span style="margin: 0 10px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.4rem;">$8.00</span>
+        </p>
+      </div>
     </div>
 
     <div class="menu-divider"></div>
@@ -514,7 +489,16 @@
         </div>
       </div>
 
-      <p class="menu-subtitle" style="text-align: center; font-size: 1.3rem; color: var(--green); font-weight: 600; margin-top: 30px;">Sizing & Pricing: 12 oz - $5.50 | 20 oz - $6.50 | 32 oz - $7.50</p>
+      <div style="background: linear-gradient(135deg, rgba(151, 185, 138, 0.15) 0%, rgba(151, 185, 138, 0.05) 100%); padding: 25px 35px; border-radius: 20px; margin-top: 35px; border: 2px solid rgba(151, 185, 138, 0.4); box-shadow: 0 6px 20px rgba(46, 78, 31, 0.08);">
+        <p style="text-align: center; font-size: 1.5rem; color: var(--dark-green); font-weight: 700; margin: 0; letter-spacing: 0.5px; line-height: 1.6;">
+          <i class="fa-solid fa-tags" style="color: var(--green); margin-right: 12px;"></i>
+          <span style="font-size: 1.25rem;">12 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$5.50</span>
+          <span style="margin: 0 18px; color: rgba(151, 185, 138, 0.5); font-weight: 300;">|</span>
+          <span style="font-size: 1.25rem;">20 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$6.50</span>
+          <span style="margin: 0 18px; color: rgba(151, 185, 138, 0.5); font-weight: 300;">|</span>
+          <span style="font-size: 1.25rem;">32 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$7.50</span>
+        </p>
+      </div>
     </div>
 
     <div class="menu-footer-note">
@@ -525,7 +509,7 @@
   <section id="preorder" class="info-section preorder-section" aria-labelledby="preorder-heading">
     <h2 id="preorder-heading"><i class="fa-solid fa-calendar-check"></i> Pre-Order Available</h2>
     <p class="preorder-intro">Planning something special? Pre-order your favorites and we'll have them ready for you!</p>
-    <p class="preorder-intro"><em>All prices include 8% tax that goes to the town.</em></p>
+    <p class="preorder-intro" style="font-style: italic; color: var(--green); margin-top: -10px; padding: 15px 25px; background: rgba(151, 185, 138, 0.1); border-radius: 12px; border-left: 4px solid var(--green); font-size: 0.95rem;"><i class="fa-solid fa-info-circle" style="margin-right: 8px;"></i>All prices include 8% tax that goes to the town.</p>
     
     <div class="preorder-images">
       <div class="preorder-image-wrapper" data-image="PreOrderMenu.jpg">
@@ -550,7 +534,7 @@
       <span class="modal-close">&times;</span>
       <h2><i class="fa-solid fa-shopping-cart"></i> Pre-Order Menu</h2>
       <p class="modal-subtitle">Select an item to pre-order</p>
-      <p class="modal-subtitle"><em>All prices include 8% tax that goes to the town.</em></p>
+      <p class="modal-subtitle" style="font-style: italic; color: var(--green); font-size: 0.95rem; margin-top: -10px; padding: 12px 20px; background: rgba(151, 185, 138, 0.1); border-radius: 10px; border-left: 3px solid var(--green);">All prices include 8% tax that goes to the town.</p>
       
       <div class="preorder-menu-items">
         <!-- Placeholder items - actual stripe links are embedded -->
