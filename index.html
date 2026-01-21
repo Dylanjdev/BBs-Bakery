@@ -518,6 +518,7 @@
   <section id="preorder" class="info-section preorder-section" aria-labelledby="preorder-heading">
     <h2 id="preorder-heading"><i class="fa-solid fa-calendar-check"></i> Pre-Order Available</h2>
     <p class="preorder-intro">Planning something special? Pre-order your favorites and we'll have them ready for you!</p>
+    <p class="preorder-intro"><em>All prices include 8% tax that goes to the town.</em></p>
     
     <div class="preorder-images">
       <div class="preorder-image-wrapper" data-image="PreOrderMenu.jpg">
@@ -542,43 +543,57 @@
       <span class="modal-close">&times;</span>
       <h2><i class="fa-solid fa-shopping-cart"></i> Pre-Order Menu</h2>
       <p class="modal-subtitle">Select an item to pre-order</p>
+      <p class="modal-subtitle"><em>All prices include 8% tax that goes to the town.</em></p>
       
       <div class="preorder-menu-items">
-        <!-- Placeholder items - replace with actual Stripe links -->
+        <!-- Placeholder items - actual stripe links are embedded -->
         <div class="preorder-item">
           <h3>Chocolate Covered Strawberries</h3>
           <p>Delicious strawberries dipped in chocolate</p>
-          <a href="#" class="preorder-link">Coming Soon</a>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <a href="https://buy.stripe.com/eVq6oH6EE8Ip8MI2UY5sA0A" class="preorder-link">$17.00 USD per 6 units</a>
+            <a href="https://buy.stripe.com/bJefZhbYY6AhaUQ2UY5sA0z" class="preorder-link">$27.00 USD per 12 units</a>
+          </div>
         </div>
         
         <div class="preorder-item">
           <h3>Red Velvet Cookies</h3>
           <p>Rich and decadent red velvet cookies</p>
-          <a href="#" class="preorder-link">Coming Soon</a>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <a href="https://buy.stripe.com/cNieVd2oo4s93sobru5sA0q" class="preorder-link">$13.00 USD per 6 units</a>
+            <a href="https://buy.stripe.com/fZuaEXbYYbUB5AweDG5sA0r" class="preorder-link">$24.00 USD per 12 units</a>
+          </div>
         </div>
         
         <div class="preorder-item">
           <h3>Raspberry White Chocolate Scones</h3>
           <p>Fresh scones with raspberry & white chocolate</p>
-          <a href="#" class="preorder-link">Coming Soon</a>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <a href="https://buy.stripe.com/eVq5kD1kk7El6EAcvy5sA0t" class="preorder-link">$13.00 USD per 4 units</a>
+            <a href="https://buy.stripe.com/14AfZh4wwf6NaUQ67a5sA0u" class="preorder-link">$22.00 USD per 8 units</a>
+            <a href="https://buy.stripe.com/9B64gze76aQx6EA9jm5sA0v" class="preorder-link">$33.00 USD per 12 units</a>
+          </div>
         </div>
         
         <div class="preorder-item">
           <h3>Strawberry & Chocolate Cream Danishes</h3>
           <p>Flaky danishes filled with strawberry & chocolate cream</p>
-          <a href="#" class="preorder-link">Coming Soon</a>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <a href="https://buy.stripe.com/6oU3cvbYY8Ip9QMcvy5sA0x" class="preorder-link">$26.00 USD per 6 units</a>
+            <a href="https://buy.stripe.com/00wdR94wwaQx0gc3Z25sA0y" class="preorder-link">$52.00 USD per 12 units</a>
+          </div>
         </div>
         
         <div class="preorder-item">
           <h3>Berries & Cream Croissants</h3>
           <p>Buttery croissants with fresh berries & cream</p>
-          <a href="#" class="preorder-link">Coming Soon</a>
+          <a href="https://buy.stripe.com/5kQ5kDfba5wdfb69jm5sA0w" class="preorder-link">$33.00 USD per 6 units</a>
         </div>
         
         <div class="preorder-item">
           <h3>Valentine's Brownies</h3>
           <p>Special Valentine's Day themed brownies</p>
-          <a href="#" class="preorder-link">Coming Soon</a>
+          <a href="https://buy.stripe.com/bJecN59QQgaRd2Y9jm5sA0s" class="preorder-link">$20.00 USD per 6 units</a>
         </div>
       </div>
       
@@ -737,19 +752,25 @@
     const closeBtn = document.querySelector('.modal-close');
 
     btn.addEventListener('click', () => {
+      const scrollY = window.scrollY;
       modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+      document.body.style.top = `-${scrollY}px`;
     });
 
-    closeBtn.addEventListener('click', () => {
+    const closeModal = () => {
+      const scrollY = document.body.style.top;
       modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
+      document.body.classList.remove('modal-open');
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
 
     window.addEventListener('click', (e) => {
       if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        closeModal();
       }
     });
 
@@ -765,11 +786,12 @@
       setInterval(updateOpenStatus, 60000);
 
       // Image modal functionality
+
       const imageModal = document.getElementById('imageModal');
       const modalImage = document.getElementById('modalImage');
       const imageCloseBtn = document.querySelector('.image-modal-close');
       const imageWrappers = document.querySelectorAll('.preorder-image-wrapper');
-
+// Expand image when clicked
       imageWrappers.forEach(wrapper => {
         wrapper.addEventListener('click', () => {
           const imageSrc = wrapper.getAttribute('data-image');
