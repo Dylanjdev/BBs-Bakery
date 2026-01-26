@@ -7,17 +7,11 @@ const cancelUrl = `${siteUrl}/checkout-cancelled.html`;
 
 const stripe = stripeSecret ? new Stripe(stripeSecret) : null;
 
-const respond = (res, status, body) => {
-  if (res) {
-    res.status(status).json(body);
-    return;
-  }
-  return {
-    statusCode: status,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
-  };
-};
+const respond = (status, body) => ({
+  statusCode: status,
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(body)
+});
 
 const getMethod = (reqOrEvent) => (reqOrEvent.method || reqOrEvent.httpMethod || '').toUpperCase();
 
@@ -35,22 +29,22 @@ const getBody = (reqOrEvent) => {
   return raw;
 };
 
-module.exports = async function handler(req, res) {
-  const method = getMethod(req);
+exports.handler = async function handler(event, context) {
+  const method = getMethod(event);
   if (method !== 'POST') {
-    return respond(res, 405, { error: 'Method not allowed' });
+    return respond(405, { error: 'Method not allowed' });
   }
 
   if (!stripe) {
-    return respond(res, 500, { error: 'Missing STRIPE_SECRET_KEY' });
+    return respond(500, { error: 'Missing STRIPE_SECRET_KEY' });
   }
 
-  const body = getBody(req);
+  const body = getBody(event);
   const priceId = body.priceId;
   const quantity = Number(body.quantity || 1) || 1;
 
   if (!priceId) {
-    return respond(res, 400, { error: 'priceId is required' });
+    return respond(400, { error: 'priceId is required' });
   }
 
   try {
@@ -63,9 +57,9 @@ module.exports = async function handler(req, res) {
       phone_number_collection: { enabled: true }
     });
 
-    return respond(res, 200, { id: session.id });
+    return respond(200, { id: session.id });
   } catch (err) {
     console.error('Stripe checkout error', err);
-    return respond(res, 500, { error: err.message || 'Unable to create checkout session' });
+    return respond(500, { error: err.message || 'Unable to create checkout session' });
   }
 };
