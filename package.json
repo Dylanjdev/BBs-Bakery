@@ -1,0 +1,12 @@
+{
+  "name": "bb-bakery-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BB's Bakery & Cafe static site with Netlify functions for Stripe checkout",
+  "scripts": {
+    "build": "echo \"Static site - no build step\""
+  },
+  "dependencies": {
+    "stripe": "^14.21.0"
+  }
+}
