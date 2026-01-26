@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Cancelled | BB's Bakery & Cafe</title>
+  <meta name="description" content="Your BB's Bakery & Cafe checkout was cancelled.">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="checkout-page">
+  <header class="site-header">
+    <div class="logo">
+      <img src="assets/images/logo.jpg" alt="BB's Bakery & Cafe logo" width="130" height="130" />
+    </div>
+    <nav class="nav-menu" aria-label="Checkout navigation">
+      <a href="/">Home</a>
+      <a href="checkout.html">Try Again</a>
+      <a href="tel:2765710891" class="phone-link"><i class="fa-solid fa-phone"></i> (276) 571-0891</a>
+    </nav>
+  </header>
+
+  <main class="info-section checkout-section">
+    <div class="checkout-confirm">
+      <div class="confirm-icon cancel"><i class="fa-solid fa-circle-xmark"></i></div>
+      <h1>Checkout cancelled</h1>
+      <p>No charges were made. You can restart checkout or call us to order by phone.</p>
+      <div class="confirm-actions">
+        <a class="btn btn-primary" href="checkout.html">Restart checkout</a>
+        <a class="btn btn-secondary" href="tel:2765710891">Call to order</a>
+      </div>
+      <p class="sm">If you keep seeing issues, please call <a href="tel:2765710891">(276) 571-0891</a>.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="currentYear"></span> BB's Bakery & Cafe — Made with ♥</p>
+    <p class="built-by">Built by <a href="https://smithdigitals.com" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/d105c3cb1d.js" crossorigin="anonymous" async></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

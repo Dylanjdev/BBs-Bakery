@@ -542,8 +542,8 @@
           <h3>Chocolate Covered Strawberries</h3>
           <p>Delicious strawberries dipped in chocolate</p>
           <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-            <a href="https://buy.stripe.com/eVq6oH6EE8Ip8MI2UY5sA0A" class="preorder-link">$17.00 USD per 6 units</a>
-            <a href="https://buy.stripe.com/bJefZhbYY6AhaUQ2UY5sA0z" class="preorder-link">$27.00 USD per 12 units</a>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_STRAWBERRIES_6" data-qty="1">$17.00 USD per 6 units</button>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_STRAWBERRIES_12" data-qty="1">$27.00 USD per 12 units</button>
           </div>
         </div>
         
@@ -551,8 +551,8 @@
           <h3>Red Velvet Cookies</h3>
           <p>Rich and decadent red velvet cookies</p>
           <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-            <a href="https://buy.stripe.com/cNieVd2oo4s93sobru5sA0q" class="preorder-link">$13.00 USD per 6 units</a>
-            <a href="https://buy.stripe.com/fZuaEXbYYbUB5AweDG5sA0r" class="preorder-link">$24.00 USD per 12 units</a>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_COOKIES_6" data-qty="1">$13.00 USD per 6 units</button>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_COOKIES_12" data-qty="1">$24.00 USD per 12 units</button>
           </div>
         </div>
         
@@ -560,9 +560,9 @@
           <h3>Raspberry White Chocolate Scones</h3>
           <p>Fresh scones with raspberry & white chocolate</p>
           <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-            <a href="https://buy.stripe.com/eVq5kD1kk7El6EAcvy5sA0t" class="preorder-link">$13.00 USD per 4 units</a>
-            <a href="https://buy.stripe.com/14AfZh4wwf6NaUQ67a5sA0u" class="preorder-link">$22.00 USD per 8 units</a>
-            <a href="https://buy.stripe.com/9B64gze76aQx6EA9jm5sA0v" class="preorder-link">$33.00 USD per 12 units</a>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_SCONES_4" data-qty="1">$13.00 USD per 4 units</button>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_SCONES_8" data-qty="1">$22.00 USD per 8 units</button>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_SCONES_12" data-qty="1">$33.00 USD per 12 units</button>
           </div>
         </div>
         
@@ -570,21 +570,21 @@
           <h3>Strawberry & Chocolate Cream Danishes</h3>
           <p>Flaky danishes filled with strawberry & chocolate cream</p>
           <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-            <a href="https://buy.stripe.com/6oU3cvbYY8Ip9QMcvy5sA0x" class="preorder-link">$26.00 USD per 6 units</a>
-            <a href="https://buy.stripe.com/00wdR94wwaQx0gc3Z25sA0y" class="preorder-link">$52.00 USD per 12 units</a>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_DANISH_6" data-qty="1">$26.00 USD per 6 units</button>
+            <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_DANISH_12" data-qty="1">$52.00 USD per 12 units</button>
           </div>
         </div>
         
         <div class="preorder-item">
           <h3>Berries & Cream Croissants</h3>
           <p>Buttery croissants with fresh berries & cream</p>
-          <a href="https://buy.stripe.com/5kQ5kDfba5wdfb69jm5sA0w" class="preorder-link">$33.00 USD per 6 units</a>
+          <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_CROISSANT_6" data-qty="1">$33.00 USD per 6 units</button>
         </div>
         
         <div class="preorder-item">
           <h3>Valentine's Brownies</h3>
           <p>Special Valentine's Day themed brownies</p>
-          <a href="https://buy.stripe.com/bJecN59QQgaRd2Y9jm5sA0s" class="preorder-link">$20.00 USD per 6 units</a>
+          <button type="button" class="preorder-link checkout-button" data-price-id="price_REPLACE_BROWNIE_6" data-qty="1">$20.00 USD per 6 units</button>
         </div>
       </div>
       
@@ -645,6 +645,12 @@
 
   <footer class="footer">
     <p>© <span id="currentYear"></span> BB's Bakery & Cafe — Made with ♥</p>    <p class="built-by">Built by <a href="https://smithdigitals.com" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>  </footer>
+  <script src="https://js.stripe.com/v3"></script>
+  <script>
+    window.STRIPE_PUBLISHABLE_KEY = 'pk_live_replace_me'; // Replace with your Stripe publishable key
+    window.CHECKOUT_ENDPOINT = '/.netlify/functions/create-checkout-session';
+  </script>
+  <script src="assets/js/checkout.js" defer></script>
   <script defer>
     // Mobile menu toggle
     const menuToggle = document.querySelector('.mobile-menu-toggle');
