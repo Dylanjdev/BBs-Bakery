@@ -652,13 +652,16 @@
 
   <footer class="footer">
     <p>© <span id="currentYear"></span> BB's Bakery & Cafe — Made with ♥</p>    <p class="built-by">Built by <a href="https://smithdigitals.com" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>  </footer>
-  <script defer>
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const overlay = document.querySelector('.mobile-overlay');
-    const body = document.body;
+    <script defer>
+  // ===============================
+  // Mobile menu toggle
+  // ===============================
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const overlay = document.querySelector('.mobile-overlay');
+  const body = document.body;
 
+  if (menuToggle && navMenu && overlay) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       overlay.classList.toggle('active');
@@ -673,7 +676,6 @@
       body.classList.remove('menu-open');
     });
 
-    // Close menu when clicking nav links
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -682,173 +684,133 @@
         body.classList.remove('menu-open');
       });
     });
+  }
 
-    // Highlight today's special
-    function highlightTodaySpecial() {
-      const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
-      console.log('Today is day:', today);
-      const specialItems = document.querySelectorAll('.menu-special li');
-      console.log('Found special items:', specialItems.length);
-      
-      specialItems.forEach(item => {
-        const itemDay = parseInt(item.getAttribute('data-day'));
-        console.log('Item day:', itemDay, 'Match:', itemDay === today);
-        if (itemDay === today) {
-          item.classList.add('today-special');
-          console.log('Added today-special class to:', item.textContent);
-        }
-      });
-    }
+  // ===============================
+  // Highlight today's special
+  // ===============================
+  function highlightTodaySpecial() {
+    const today = new Date().getDay(); // 0 = Sunday
+    const specialItems = document.querySelectorAll('.menu-special li');
 
-    // Check if bakery is open
-    function updateOpenStatus() {
-      const statusBadge = document.getElementById('statusBadge');
-      const statusDot = statusBadge.querySelector('.status-dot');
-      const statusText = statusBadge.querySelector('.status-text');
-      
-      const now = new Date();
-      const day = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const currentTime = hours + minutes / 60;
-      
-      // Check hours: Mon-Fri 7AM-2PM, Sat 8AM-2PM
-      const isMondayToFriday = day >= 1 && day <= 5;
-      const isSaturday = day === 6;
-      const isOpenHours = (isMondayToFriday && currentTime >= 7 && currentTime < 14) || (isSaturday && currentTime >= 8 && currentTime < 14);
-      
-      if (isOpenHours) {
-        statusBadge.classList.add('open');
-        statusBadge.classList.remove('closed');
-        statusText.textContent = 'OPEN NOW';
+    specialItems.forEach(item => {
+      const itemDay = parseInt(item.getAttribute('data-day'));
+      if (itemDay === today) {
+        item.classList.add('today-special');
+      }
+    });
+  }
+
+  // ===============================
+  // Open / Closed status
+  // ===============================
+  function updateOpenStatus() {
+    const statusBadge = document.getElementById('statusBadge');
+    if (!statusBadge) return;
+
+    const statusText = statusBadge.querySelector('.status-text');
+
+    const now = new Date();
+    const day = now.getDay();
+    const currentTime = now.getHours() + now.getMinutes() / 60;
+
+    const isMondayToFriday = day >= 1 && day <= 5;
+    const isSaturday = day === 6;
+
+    const isOpen =
+      (isMondayToFriday && currentTime >= 7 && currentTime < 14) ||
+      (isSaturday && currentTime >= 8 && currentTime < 14);
+
+    if (isOpen) {
+      statusBadge.classList.add('open');
+      statusBadge.classList.remove('closed');
+      statusText.textContent = 'OPEN NOW';
+    } else {
+      statusBadge.classList.add('closed');
+      statusBadge.classList.remove('open');
+
+      if (day === 0 || (day === 6 && currentTime >= 14)) {
+        statusText.textContent = 'CLOSED - Opens Monday 7:00 AM';
+      } else if (day === 6 && currentTime < 8) {
+        statusText.textContent = 'CLOSED - Opens at 8:00 AM';
+      } else if (currentTime < 7) {
+        statusText.textContent = 'CLOSED - Opens at 7:00 AM';
       } else {
-        statusBadge.classList.add('closed');
-        statusBadge.classList.remove('open');
-        
-        if (day === 0) {
-          // Sunday - opens Monday
-          statusText.textContent = 'CLOSED - Opens Monday 7:00 AM';
-        } else if (day === 6 && currentTime >= 14) {
-          // Saturday after 2 PM - opens Monday
-          statusText.textContent = 'CLOSED - Opens Monday 7:00 AM';
-        } else if (day === 6 && currentTime < 8) {
-          // Saturday before 8 AM
-          statusText.textContent = 'CLOSED - Opens at 8:00 AM';
-        } else if (currentTime < 7) {
-          // Before opening hours Mon-Fri
-          statusText.textContent = 'CLOSED - Opens at 7:00 AM';
-        } else {
-          // After closing hours on weekday - opens tomorrow
-          statusText.textContent = 'CLOSED - Opens Tomorrow 7:00 AM';
-        }
+        statusText.textContent = 'CLOSED - Opens Tomorrow 7:00 AM';
       }
     }
+  }
 
-    // Pre-order modal functionality
-    const modal = document.getElementById('preorderModal');
-    const btn = document.getElementById('preorderBtn');
-    const closeBtn = document.querySelector('.modal-close');
+  // ===============================
+  // Pre-order modal
+  // ===============================
+  const modal = document.getElementById('preorderModal');
+  const preorderBtn = document.getElementById('preorderBtn');
+  const modalClose = document.querySelector('.modal-close');
 
-    btn.addEventListener('click', () => {
+  if (modal && preorderBtn && modalClose) {
+    preorderBtn.addEventListener('click', () => {
       const scrollY = window.scrollY;
       modal.style.display = 'block';
-      document.body.classList.add('modal-open');
-      document.body.style.top = `-${scrollY}px`;
+      body.classList.add('modal-open');
+      body.style.top = `-${scrollY}px`;
     });
 
     const closeModal = () => {
-      const scrollY = document.body.style.top;
+      const scrollY = body.style.top;
       modal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-      document.body.style.top = '';
+      body.classList.remove('modal-open');
+      body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
     };
 
-    closeBtn.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
 
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
+    window.addEventListener('click', e => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // ===============================
+  // Image modal
+  // ===============================
+  const imageModal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  const imageCloseBtn = document.querySelector('.image-modal-close');
+  const imageWrappers = document.querySelectorAll('.preorder-image-wrapper');
+
+  if (imageModal && modalImage && imageCloseBtn) {
+    imageWrappers.forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        modalImage.src = wrapper.getAttribute('data-image');
+        imageModal.style.display = 'block';
+        body.style.overflow = 'hidden';
+      });
+    });
+
+    imageCloseBtn.addEventListener('click', () => {
+      imageModal.style.display = 'none';
+      body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === imageModal) {
+        imageModal.style.display = 'none';
+        body.style.overflow = 'auto';
       }
     });
+  }
 
-    // Initialize features when DOM is ready
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set current year in footer
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-      
-      highlightTodaySpecial();
-      updateOpenStatus();
-      
-      // Update status every minute
-      setInterval(updateOpenStatus, 60000);
+  // ===============================
+  // Init
+  // ===============================
+  const yearEl = document.getElementById('currentYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Image modal functionality
+  highlightTodaySpecial();
+  updateOpenStatus();
+  setInterval(updateOpenStatus, 60000);
+</script>
 
-      const imageModal = document.getElementById('imageModal');
-      const modalImage = document.getElementById('modalImage');
-      const imageCloseBtn = document.querySelector('.image-modal-close');
-      const imageWrappers = document.querySelectorAll('.preorder-image-wrapper');
-// Expand image when clicked
-      imageWrappers.forEach(wrapper => {
-        wrapper.addEventListener('click', () => {
-          const imageSrc = wrapper.getAttribute('data-image');
-          modalImage.src = imageSrc;
-          imageModal.style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      imageCloseBtn.addEventListener('click', () => {
-        imageModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      });
-
-      window.addEventListener('click', (e) => {
-        if (e.target === imageModal) {
-          imageModal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      });
-
-      // Croissants modal functionality
-      const croissantsModal = document.getElementById('croissantsModal');
-      const croissantsBtn = document.getElementById('croissantsBtn');
-      const croissantsCloseBtn = croissantsModal.querySelector('.modal-close');
-
-      croissantsBtn.addEventListener('click', () => {
-        const scrollY = window.scrollY;
-        croissantsModal.style.display = 'block';
-        document.body.classList.add('modal-open');
-        document.body.style.top = `-${scrollY}px`;
-      });
-
-      const closeCroissantsModal = () => {
-        const scrollY = document.body.style.top;
-        croissantsModal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-        document.body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      };
-
-      croissantsCloseBtn.addEventListener('click', closeCroissantsModal);
-
-      window.addEventListener('click', (e) => {
-        if (e.target === croissantsModal) {
-          closeCroissantsModal();
-        }
-      });
-
-      // Croissants image modal functionality
-      const croissantsImageWrappers = document.querySelectorAll('.croissants-image-wrapper');
-      croissantsImageWrappers.forEach(wrapper => {
-        wrapper.addEventListener('click', () => {
-          const imageSrc = wrapper.getAttribute('data-image');
-          modalImage.src = imageSrc;
-          imageModal.style.display = 'block';
-          document.body.style.overflow = 'hidden';
-        });
-      });
-    });
-  </script></body>
+  </body>
 </html>
