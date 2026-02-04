@@ -62,7 +62,7 @@
   
   <!-- Preload Critical Resources -->
   <link rel="preload" href="assets/css/style.css" as="style">
-  <link rel="preload" href="assets/images/logo.jpg" as="image">
+  <link rel="preload" href="assets/images/logo.webp" as="image">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +82,7 @@
     "@context": "https://schema.org",
     "@type": "Bakery",
     "name": "BB's Bakery & Cafe",
-    "image": "https://www.bbs-bakery.com/assets/images/logo.jpg",
+    "image": "https://www.bbs-bakery.com/assets/images/logo.webp",
     "url": "https://www.bbs-bakery.com",
     "telephone": "+12765710891",
     "priceRange": "$3.50-$8.00",
@@ -170,7 +170,7 @@
 <body>
   <header class="site-header">
     <div class="logo">
-      <img src="assets/images/logo.jpg" alt="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, Virginia" width="150" height="150" fetchpriority="high" />
+      <img src="assets/images/logo.webp" alt="BB's Bakery & Cafe - Fresh Baked Goods in Pennington Gap, Virginia" width="150" height="150" fetchpriority="high" />
     </div>
     <button class="mobile-menu-toggle" aria-label="Toggle menu">
       <span class="hamburger-line"></span>
@@ -187,346 +187,348 @@
   </header>
   <div class="mobile-overlay"></div>
 
-  <section class="hero" aria-label="Welcome banner">
-    <div class="cover-photo">
-      <img src="assets/images/CoverPhoto.jpg" alt="Fresh baked pastries and breads at BB's Bakery & Cafe in Pennington Gap, Virginia" width="1200" height="600" fetchpriority="high" />
-    </div>
-    <div class="hero-content">
-      <h1>Welcome to BB's Bakery & Cafe</h1>
-      <p class="hero-subtitle">Fresh-baked goodness made with love every morning</p>
-      <p class="hero-location"><i class="fa-solid fa-location-dot"></i> Pennington Gap, Virginia</p>
-      <div class="hero-buttons">
-        <a href="#menu" class="btn btn-primary">View Menu</a>
-        <a href="tel:2765710891" class="btn btn-secondary" aria-label="Call BB's Bakery"><i class="fa-solid fa-phone"></i> Order Now</a>
-        <a href="#preorder" class="btn btn-valentine"><i class="fa-solid fa-heart"></i> Pre-Order Valentine Menu</a>
+  <main id="main-content" aria-label="Main content">
+    <section class="hero" aria-label="Welcome banner">
+      <div class="cover-photo">
+        <img src="assets/images/CoverPhoto.webp" alt="Fresh baked pastries and breads at BB's Bakery & Cafe in Pennington Gap, Virginia" width="1200" height="600" fetchpriority="high" />
       </div>
-    </div>
-  </section>
-
-  <section id="about" class="info-section about-section" aria-labelledby="about-heading">
-    <h2 id="about-heading"><i class="fa-solid fa-heart"></i> About Us</h2>
-    <p class="about-intro">At BB's Bakery & Cafe, we believe every morning deserves something special. That's why we bake fresh pastries, breads, and treats daily, using quality ingredients and time-honored recipes.</p>
-    <div class="about-highlights">
-      <div class="highlight">
-        <i class="fa-solid fa-clock"></i>
-        <h3>Fresh Daily</h3>
-        <p>Everything baked fresh each morning</p>
+      <div class="hero-content">
+        <h1>Welcome to BB's Bakery & Cafe</h1>
+        <p class="hero-subtitle">Fresh-baked goodness made with love every morning</p>
+        <p class="hero-location"><i class="fa-solid fa-location-dot"></i> Pennington Gap, Virginia</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+          <a href="tel:2765710891" class="btn btn-secondary" aria-label="Call BB's Bakery"><i class="fa-solid fa-phone"></i> Order Now</a>
+          <a href="#preorder" class="btn btn-valentine"><i class="fa-solid fa-heart"></i> Pre-Order Valentine Menu</a>
+        </div>
       </div>
-      <div class="highlight">
-        <i class="fa-solid fa-wheat-awn"></i>
-        <h3>Quality Ingredients</h3>
-        <p>Only the finest, freshest ingredients</p>
+    </section>
+
+    <section id="about" class="info-section about-section" aria-labelledby="about-heading">
+      <h2 id="about-heading"><i class="fa-solid fa-heart"></i> About Us</h2>
+      <p class="about-intro">At BB's Bakery & Cafe, we believe every morning deserves something special. That's why we bake fresh pastries, breads, and treats daily, using quality ingredients and time-honored recipes.</p>
+      <div class="about-highlights">
+        <div class="highlight">
+          <i class="fa-solid fa-clock"></i>
+          <h3>Fresh Daily</h3>
+          <p>Everything baked fresh each morning</p>
+        </div>
+        <div class="highlight">
+          <i class="fa-solid fa-wheat-awn"></i>
+          <h3>Quality Ingredients</h3>
+          <p>Only the finest, freshest ingredients</p>
+        </div>
+        <div class="highlight">
+          <i class="fa-solid fa-mug-hot"></i>
+          <h3>Amazing Coffee</h3>
+          <p>Perfectly brewed every time</p>
+        </div>
       </div>
-      <div class="highlight">
-        <i class="fa-solid fa-mug-hot"></i>
-        <h3>Amazing Coffee</h3>
-        <p>Perfectly brewed every time</p>
+    </section>
+
+    <section id="menu" class="info-section menu-section" aria-labelledby="menu-heading">
+      <header class="menu-header">
+        <h2 id="menu-heading">Our Menu</h2>
+        <p class="tagline">Bringing the best bites to your day</p>
+      </header>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-content" style="display: block;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700; text-align: center; padding-bottom: 20px; border-bottom: 2px solid var(--green);"><i class="fa-solid fa-cake-candles" style="margin-right: 12px; color: var(--green);"></i> Baked Goods</h3>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="menu-special">
+            <h4>Special of the Day</h4>
+            <ul>
+              <li data-day="0">Sunday – Closed</li>
+              <li data-day="1"><i class="fa-solid fa-croissant"></i> Monday – Croissants</li>
+              <li data-day="2"><i class="fa-solid fa-mug-hot"></i> Tuesday – $10 Coffee Cake & Small/Medium Coffee (Hot or Iced)</li>
+              <li data-day="3"><i class="fa-solid fa-cookie"></i> Wednesday – Danishes</li>
+              <li data-day="4"><i class="fa-solid fa-blender"></i> Thursday – $7 Frappee</li>
+              <li data-day="6"><i class="fa-solid fa-star"></i> Saturday – Baker's Choice</li>
+            </ul>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Muffins</h4>
+              <p>flour + butter + eggs + sugar + fruit variety</p>
+            </div>
+              <span class="price">$4.00</span>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Brownies</h4>
+              <p>flour + cocoa powder + eggs + sugar + milk</p>
+            </div>
+            <span class="price">$3.50</span>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Scones</h4>
+              <p>flour + butter + eggs + buttermilk + fruit variety</p>
+            </div>
+            <span class="price">$3.50</span>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Cinnamon Rolls</h4>
+              <p>flour + butter + milk + eggs + cinnamon + sugar</p>
+            </div>
+              <span class="price">$5.00</span>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Coffee Cake</h4>
+              <p>flour + butter + eggs + sugar + cinnamon streusel</p>
+            </div>
+            <span class="price">$4.50 <small style="opacity: 0.8; font-size: 0.85em;">/slice</small></span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section id="menu" class="info-section menu-section" aria-labelledby="menu-heading">
-    <header class="menu-header">
-      <h2 id="menu-heading">Our Menu</h2>
-      <p class="tagline">Bringing the best bites to your day</p>
-    </header>
+      <div class="menu-divider"></div>
 
-    <div class="menu-divider"></div>
+      <div class="menu-content" style="display: block; background: rgba(255, 255, 255, 0.3); padding: 35px; border-radius: 20px; box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12); backdrop-filter: blur(10px); border: 1px solid rgba(151, 185, 138, 0.3);">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700; text-align: center; padding-bottom: 20px; border-bottom: 2px solid var(--green);"><i class="fa-solid fa-bacon" style="margin-right: 12px; color: var(--green);"></i> Breakfast</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; max-width: 1200px; margin: 0 auto;">
+          <div class="menu-item">
+            <div>
+              <h4>Savory Biscuit</h4>
+              <p>choice of protein + cheese + egg</p>
+            </div>
+            <span class="price">$5.50</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <h4>Breakfast Sandwich</h4>
+              <p>choice of protein + cheese + two eggs</p>
+            </div>
+            <span class="price">$7.00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <h4>Breakfast Wrap</h4>
+              <p>choice of protein + cheese + two eggs</p>
+            </div>
+            <span class="price">$8.00</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <h4>Omelette</h4>
+              <p>choice of protein + cheese + four eggs</p>
+            </div>
+            <span class="price">$8.00</span>
+          </div>
+        </div>
+      </div>
 
-    <div class="menu-content" style="display: block;">
-      <h3 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700; text-align: center; padding-bottom: 20px; border-bottom: 2px solid var(--green);"><i class="fa-solid fa-cake-candles" style="margin-right: 12px; color: var(--green);"></i> Baked Goods</h3>
+      <div class="menu-divider"></div>
+
+      <div class="menu-content" style="display: block; background: rgba(255, 255, 255, 0.3); padding: 35px; border-radius: 20px; box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12); backdrop-filter: blur(10px); border: 1px solid rgba(151, 185, 138, 0.3);">
+        <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700;"><i class="fa-solid fa-bolt"></i> Loaded Energy</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+          <div class="menu-item">
+            <div>
+              <h4>Tater Colada</h4>
+              <p>energy + blue raspberry + coconut + vanilla + lemonade</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Blushing Belle</h4>
+              <p>energy + peach + raspberry + vanilla + grenadine + lemonade</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Rip-Tide</h4>
+              <p>energy + dragonfruit + pomegranate + blue curacao + lemonade</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Wrecking Ball</h4>
+              <p>energy + blackberry + raspberry + vanilla bean + sours</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Fruit Roll-Up</h4>
+              <p>energy + grenadine + pomegranate + strawberry + sours</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>BB's Fav</h4>
+              <p>energy + vanilla + blue raspberry + cold foam</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Honey's Tropical Tumble</h4>
+              <p>energy + strawberry + banana + pineapple + sours</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Smokin' Ash</h4>
+              <p>energy + blackberry + lime + lemonade</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(151, 185, 138, 0.15) 0%, rgba(151, 185, 138, 0.05) 100%); padding: 25px 35px; border-radius: 20px; margin-top: 35px; border: 2px solid rgba(151, 185, 138, 0.4); box-shadow: 0 6px 20px rgba(46, 78, 31, 0.08);">
+          <p style="text-align: center; font-size: 1.5rem; color: var(--dark-green); font-weight: 700; margin: 0; letter-spacing: 0.5px;">
+            <i class="fa-solid fa-tags" style="color: var(--green); margin-right: 12px;"></i>
+            <span style="font-size: 1.3rem;">32 oz</span> <span style="margin: 0 10px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.4rem;">$8.00</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-content" style="display: block; background: rgba(255, 255, 255, 0.3); padding: 35px; border-radius: 20px; box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12); backdrop-filter: blur(10px); border: 1px solid rgba(151, 185, 138, 0.3);">
+        <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700;"><i class="fa-solid fa-mug-hot"></i> Specialty Coffee</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+          <div class="menu-item">
+            <div>
+              <h4>Tiramisu</h4>
+              <p>mocha + espresso + mascarpone cheese mixture + cold foam + chocolate drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Cookies & Cream</h4>
+              <p>white chocolate vanilla + espresso + oreo cream mixture + chocolate drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Smore's</h4>
+              <p>mocha + espresso + brown sugar + marshmallow fluff mixture + chocolate drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>White Chocolate Raspberry</h4>
+              <p>white chocolate + espresso + raspberry cold foam</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Caramel Kolb</h4>
+              <p>caramel base + espresso + brown sugar + cookie mixture + caramel drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Cinnamon Roll</h4>
+              <p>cream cheese icing base + cinnamon + brown sugar + espresso + cheesecake + vanilla</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Conor McGregor</h4>
+              <p>caramel + espresso + irish cream + brown sugar</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Blackstone</h4>
+              <p>vanilla + caramel + brown sugar + espresso</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Peppermint Mocha</h4>
+              <p>espresso + peppermint + mocha + chocolate drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Caramel Toast Crunch</h4>
+              <p>espresso + caramel + brown sugar, CTC powder + caramel drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>White Nut</h4>
+              <p>espresso + almond milk + vanilla + white chocolate drizzle</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div>
+              <h4>Mocha Nut</h4>
+              <p>coconut mocha + espresso + almond milk + chocolate drizzle</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(151, 185, 138, 0.15) 0%, rgba(151, 185, 138, 0.05) 100%); padding: 25px 35px; border-radius: 20px; margin-top: 35px; border: 2px solid rgba(151, 185, 138, 0.4); box-shadow: 0 6px 20px rgba(46, 78, 31, 0.08);">
+          <p style="text-align: center; font-size: 1.5rem; color: var(--dark-green); font-weight: 700; margin: 0; letter-spacing: 0.5px; line-height: 1.6;">
+            <i class="fa-solid fa-tags" style="color: var(--green); margin-right: 12px;"></i>
+            <span style="font-size: 1.25rem;">12 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$5.50</span>
+            <span style="margin: 0 18px; color: rgba(151, 185, 138, 0.5); font-weight: 300;">|</span>
+            <span style="font-size: 1.25rem;">20 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$6.50</span>
+            <span style="margin: 0 18px; color: rgba(151, 185, 138, 0.5); font-weight: 300;">|</span>
+            <span style="font-size: 1.25rem;">32 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$7.50</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="menu-footer-note">
+        <p>Please speak with any of our baristas for clarifications over allergens and intolerances.</p>
+      </div>
+    </section>
+
+    <section id="preorder" class="info-section preorder-section" aria-labelledby="preorder-heading">
+      <h2 id="preorder-heading"><i class="fa-solid fa-calendar-check"></i> Pre-Order Available</h2>
+      <p class="preorder-intro">Planning something special? Pre-order your favorites and we'll have them ready for you!</p>
+      <p class="preorder-intro" style="font-style: italic; color: var(--green); margin-top: -10px; padding: 15px 25px; background: rgba(151, 185, 138, 0.1); border-radius: 12px; border-left: 4px solid var(--green); font-size: 0.95rem;"><i class="fa-solid fa-info-circle" style="margin-right: 8px;"></i>All prices include 8% tax that goes to the town.</p>
       
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div class="menu-special">
-          <h4>Special of the Day</h4>
-          <ul>
-            <li data-day="0">Sunday – Closed</li>
-            <li data-day="1"><i class="fa-solid fa-croissant"></i> Monday – Croissants</li>
-            <li data-day="2"><i class="fa-solid fa-mug-hot"></i> Tuesday – $10 Coffee Cake & Small/Medium Coffee (Hot or Iced)</li>
-            <li data-day="3"><i class="fa-solid fa-cookie"></i> Wednesday – Danishes</li>
-            <li data-day="4"><i class="fa-solid fa-blender"></i> Thursday – $7 Frappee</li>
-            <li data-day="6"><i class="fa-solid fa-star"></i> Saturday – Baker's Choice</li>
-          </ul>
+      <div class="preorder-images">
+        <div class="preorder-image-wrapper" data-image="assets/images/PreOrderMenu.webp">
+          <img src="assets/images/PreOrderMenu.webp" alt="BB's Bakery Pre-Order Menu - Special items available for pre-order" width="800" height="1036" loading="lazy" />
+          <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
         </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Muffins</h4>
-            <p>flour + butter + eggs + sugar + fruit variety</p>
-          </div>
-            <span class="price">$4.00</span>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Brownies</h4>
-            <p>flour + cocoa powder + eggs + sugar + milk</p>
-          </div>
-          <span class="price">$3.50</span>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Scones</h4>
-            <p>flour + butter + eggs + buttermilk + fruit variety</p>
-          </div>
-          <span class="price">$3.50</span>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Cinnamon Rolls</h4>
-            <p>flour + butter + milk + eggs + cinnamon + sugar</p>
-          </div>
-            <span class="price">$5.00</span>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Coffee Cake</h4>
-            <p>flour + butter + eggs + sugar + cinnamon streusel</p>
-          </div>
-          <span class="price">$4.50 <small style="opacity: 0.8; font-size: 0.85em;">/slice</small></span>
+        <div class="preorder-image-wrapper" data-image="assets/images/PreOrderMenuPrices.webp">
+          <img src="assets/images/PreOrderMenuPrices.webp" alt="BB's Bakery Pre-Order Menu Prices - Pricing for pre-order items" width="800" height="1036" loading="lazy" />
+          <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
         </div>
       </div>
-    </div>
-
-    <div class="menu-divider"></div>
-
-    <div class="menu-content" style="display: block; background: rgba(255, 255, 255, 0.3); padding: 35px; border-radius: 20px; box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12); backdrop-filter: blur(10px); border: 1px solid rgba(151, 185, 138, 0.3);">
-      <h3 style="font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700; text-align: center; padding-bottom: 20px; border-bottom: 2px solid var(--green);"><i class="fa-solid fa-bacon" style="margin-right: 12px; color: var(--green);"></i> Breakfast</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; max-width: 1200px; margin: 0 auto;">
-        <div class="menu-item">
-          <div>
-            <h4>Savory Biscuit</h4>
-            <p>choice of protein + cheese + egg</p>
-          </div>
-          <span class="price">$5.50</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Breakfast Sandwich</h4>
-            <p>choice of protein + cheese + two eggs</p>
-          </div>
-          <span class="price">$7.00</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Breakfast Wrap</h4>
-            <p>choice of protein + cheese + two eggs</p>
-          </div>
-          <span class="price">$8.00</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Omelette</h4>
-            <p>choice of protein + cheese + four eggs</p>
-          </div>
-          <span class="price">$8.00</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-divider"></div>
-
-    <div class="menu-content" style="display: block; background: rgba(255, 255, 255, 0.3); padding: 35px; border-radius: 20px; box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12); backdrop-filter: blur(10px); border: 1px solid rgba(151, 185, 138, 0.3);">
-      <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700;"><i class="fa-solid fa-bolt"></i> Loaded Energy</h3>
       
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-        <div class="menu-item">
-          <div>
-            <h4>Tater Colada</h4>
-            <p>energy + blue raspberry + coconut + vanilla + lemonade</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Blushing Belle</h4>
-            <p>energy + peach + raspberry + vanilla + grenadine + lemonade</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Rip-Tide</h4>
-            <p>energy + dragonfruit + pomegranate + blue curacao + lemonade</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Wrecking Ball</h4>
-            <p>energy + blackberry + raspberry + vanilla bean + sours</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Fruit Roll-Up</h4>
-            <p>energy + grenadine + pomegranate + strawberry + sours</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>BB's Fav</h4>
-            <p>energy + vanilla + blue raspberry + cold foam</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Honey's Tropical Tumble</h4>
-            <p>energy + strawberry + banana + pineapple + sours</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Smokin' Ash</h4>
-            <p>energy + blackberry + lime + lemonade</p>
-          </div>
-        </div>
+      <div class="preorder-cta">
+        <p><strong>Ready to order?</strong> Pre-order your Valentine's favorites today!</p>
+        <button id="preorderBtn" class="btn btn-primary preorder-btn">Pre-Order Now</button>
       </div>
-
-      <div style="background: linear-gradient(135deg, rgba(151, 185, 138, 0.15) 0%, rgba(151, 185, 138, 0.05) 100%); padding: 25px 35px; border-radius: 20px; margin-top: 35px; border: 2px solid rgba(151, 185, 138, 0.4); box-shadow: 0 6px 20px rgba(46, 78, 31, 0.08);">
-        <p style="text-align: center; font-size: 1.5rem; color: var(--dark-green); font-weight: 700; margin: 0; letter-spacing: 0.5px;">
-          <i class="fa-solid fa-tags" style="color: var(--green); margin-right: 12px;"></i>
-          <span style="font-size: 1.3rem;">32 oz</span> <span style="margin: 0 10px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.4rem;">$8.00</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="menu-divider"></div>
-
-    <div class="menu-content" style="display: block; background: rgba(255, 255, 255, 0.3); padding: 35px; border-radius: 20px; box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12); backdrop-filter: blur(10px); border: 1px solid rgba(151, 185, 138, 0.3);">
-      <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.3rem; margin-bottom: 30px; color: var(--dark-green); font-weight: 700;"><i class="fa-solid fa-mug-hot"></i> Specialty Coffee</h3>
-      
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-        <div class="menu-item">
-          <div>
-            <h4>Tiramisu</h4>
-            <p>mocha + espresso + mascarpone cheese mixture + cold foam + chocolate drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Cookies & Cream</h4>
-            <p>white chocolate vanilla + espresso + oreo cream mixture + chocolate drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Smore's</h4>
-            <p>mocha + espresso + brown sugar + marshmallow fluff mixture + chocolate drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>White Chocolate Raspberry</h4>
-            <p>white chocolate + espresso + raspberry cold foam</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Caramel Kolb</h4>
-            <p>caramel base + espresso + brown sugar + cookie mixture + caramel drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Cinnamon Roll</h4>
-            <p>cream cheese icing base + cinnamon + brown sugar + espresso + cheesecake + vanilla</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Conor McGregor</h4>
-            <p>caramel + espresso + irish cream + brown sugar</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Blackstone</h4>
-            <p>vanilla + caramel + brown sugar + espresso</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Peppermint Mocha</h4>
-            <p>espresso + peppermint + mocha + chocolate drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Caramel Toast Crunch</h4>
-            <p>espresso + caramel + brown sugar, CTC powder + caramel drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>White Nut</h4>
-            <p>espresso + almond milk + vanilla + white chocolate drizzle</p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h4>Mocha Nut</h4>
-            <p>coconut mocha + espresso + almond milk + chocolate drizzle</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="background: linear-gradient(135deg, rgba(151, 185, 138, 0.15) 0%, rgba(151, 185, 138, 0.05) 100%); padding: 25px 35px; border-radius: 20px; margin-top: 35px; border: 2px solid rgba(151, 185, 138, 0.4); box-shadow: 0 6px 20px rgba(46, 78, 31, 0.08);">
-        <p style="text-align: center; font-size: 1.5rem; color: var(--dark-green); font-weight: 700; margin: 0; letter-spacing: 0.5px; line-height: 1.6;">
-          <i class="fa-solid fa-tags" style="color: var(--green); margin-right: 12px;"></i>
-          <span style="font-size: 1.25rem;">12 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$5.50</span>
-          <span style="margin: 0 18px; color: rgba(151, 185, 138, 0.5); font-weight: 300;">|</span>
-          <span style="font-size: 1.25rem;">20 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$6.50</span>
-          <span style="margin: 0 18px; color: rgba(151, 185, 138, 0.5); font-weight: 300;">|</span>
-          <span style="font-size: 1.25rem;">32 oz</span> <span style="margin: 0 8px; color: var(--green); font-weight: 400;">•</span> <span style="font-size: 1.35rem;">$7.50</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="menu-footer-note">
-      <p>Please speak with any of our baristas for clarifications over allergens and intolerances.</p>
-    </div>
-  </section>
-
-  <section id="preorder" class="info-section preorder-section" aria-labelledby="preorder-heading">
-    <h2 id="preorder-heading"><i class="fa-solid fa-calendar-check"></i> Pre-Order Available</h2>
-    <p class="preorder-intro">Planning something special? Pre-order your favorites and we'll have them ready for you!</p>
-    <p class="preorder-intro" style="font-style: italic; color: var(--green); margin-top: -10px; padding: 15px 25px; background: rgba(151, 185, 138, 0.1); border-radius: 12px; border-left: 4px solid var(--green); font-size: 0.95rem;"><i class="fa-solid fa-info-circle" style="margin-right: 8px;"></i>All prices include 8% tax that goes to the town.</p>
-    
-    <div class="preorder-images">
-      <div class="preorder-image-wrapper" data-image="assets/images/PreOrderMenu.jpg">
-        <img src="assets/images/PreOrderMenu.jpg" alt="BB's Bakery Pre-Order Menu - Special items available for pre-order" loading="lazy" />
-        <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
-      </div>
-      <div class="preorder-image-wrapper" data-image="assets/images/PreOrderMenuPrices.jpg">
-        <img src="assets/images/PreOrderMenuPrices.jpg" alt="BB's Bakery Pre-Order Menu Prices - Pricing for pre-order items" loading="lazy" />
-        <div class="expand-text"><i class="fa-solid fa-expand"></i> Click to Expand</div>
-      </div>
-    </div>
-    
-    <div class="preorder-cta">
-      <p><strong>Ready to order?</strong> Pre-order your Valentine's favorites today!</p>
-      <button id="preorderBtn" class="btn btn-primary preorder-btn">Pre-Order Now</button>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Pre-Order Modal -->
   <div id="preorderModal" class="modal">
@@ -652,165 +654,7 @@
 
   <footer class="footer">
     <p>© <span id="currentYear"></span> BB's Bakery & Cafe — Made with ♥</p>    <p class="built-by">Built by <a href="https://smithdigitals.com" target="_blank" rel="noopener noreferrer">Smith Digitals</a></p>  </footer>
-    <script defer>
-  // ===============================
-  // Mobile menu toggle
-  // ===============================
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  const overlay = document.querySelector('.mobile-overlay');
-  const body = document.body;
-
-  if (menuToggle && navMenu && overlay) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      overlay.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-      body.classList.toggle('menu-open');
-    });
-
-    overlay.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      overlay.classList.remove('active');
-      menuToggle.classList.remove('active');
-      body.classList.remove('menu-open');
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        menuToggle.classList.remove('active');
-        body.classList.remove('menu-open');
-      });
-    });
-  }
-
-  // ===============================
-  // Highlight today's special
-  // ===============================
-  function highlightTodaySpecial() {
-    const today = new Date().getDay(); // 0 = Sunday
-    const specialItems = document.querySelectorAll('.menu-special li');
-
-    specialItems.forEach(item => {
-      const itemDay = parseInt(item.getAttribute('data-day'));
-      if (itemDay === today) {
-        item.classList.add('today-special');
-      }
-    });
-  }
-
-  // ===============================
-  // Open / Closed status
-  // ===============================
-  function updateOpenStatus() {
-    const statusBadge = document.getElementById('statusBadge');
-    if (!statusBadge) return;
-
-    const statusText = statusBadge.querySelector('.status-text');
-
-    const now = new Date();
-    const day = now.getDay();
-    const currentTime = now.getHours() + now.getMinutes() / 60;
-
-    const isMondayToFriday = day >= 1 && day <= 5;
-    const isSaturday = day === 6;
-
-    const isOpen =
-      (isMondayToFriday && currentTime >= 7 && currentTime < 14) ||
-      (isSaturday && currentTime >= 8 && currentTime < 14);
-
-    if (isOpen) {
-      statusBadge.classList.add('open');
-      statusBadge.classList.remove('closed');
-      statusText.textContent = 'OPEN NOW';
-    } else {
-      statusBadge.classList.add('closed');
-      statusBadge.classList.remove('open');
-
-      if (day === 0 || (day === 6 && currentTime >= 14)) {
-        statusText.textContent = 'CLOSED - Opens Monday 7:00 AM';
-      } else if (day === 6 && currentTime < 8) {
-        statusText.textContent = 'CLOSED - Opens at 8:00 AM';
-      } else if (currentTime < 7) {
-        statusText.textContent = 'CLOSED - Opens at 7:00 AM';
-      } else {
-        statusText.textContent = 'CLOSED - Opens Tomorrow 7:00 AM';
-      }
-    }
-  }
-
-  // ===============================
-  // Pre-order modal
-  // ===============================
-  const modal = document.getElementById('preorderModal');
-  const preorderBtn = document.getElementById('preorderBtn');
-  const modalClose = document.querySelector('.modal-close');
-
-  if (modal && preorderBtn && modalClose) {
-    preorderBtn.addEventListener('click', () => {
-      const scrollY = window.scrollY;
-      modal.style.display = 'block';
-      body.classList.add('modal-open');
-      body.style.top = `-${scrollY}px`;
-    });
-
-    const closeModal = () => {
-      const scrollY = body.style.top;
-      modal.style.display = 'none';
-      body.classList.remove('modal-open');
-      body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    };
-
-    modalClose.addEventListener('click', closeModal);
-
-    window.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-  }
-
-  // ===============================
-  // Image modal
-  // ===============================
-  const imageModal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-  const imageCloseBtn = document.querySelector('.image-modal-close');
-  const imageWrappers = document.querySelectorAll('.preorder-image-wrapper');
-
-  if (imageModal && modalImage && imageCloseBtn) {
-    imageWrappers.forEach(wrapper => {
-      wrapper.addEventListener('click', () => {
-        modalImage.src = wrapper.getAttribute('data-image');
-        imageModal.style.display = 'block';
-        body.style.overflow = 'hidden';
-      });
-    });
-
-    imageCloseBtn.addEventListener('click', () => {
-      imageModal.style.display = 'none';
-      body.style.overflow = 'auto';
-    });
-
-    window.addEventListener('click', e => {
-      if (e.target === imageModal) {
-        imageModal.style.display = 'none';
-        body.style.overflow = 'auto';
-      }
-    });
-  }
-
-  // ===============================
-  // Init
-  // ===============================
-  const yearEl = document.getElementById('currentYear');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  highlightTodaySpecial();
-  updateOpenStatus();
-  setInterval(updateOpenStatus, 60000);
-</script>
+    <script src="assets/js/script.js" defer></script>
 
   </body>
 </html>
