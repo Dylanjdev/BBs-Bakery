@@ -1,8 +1,8 @@
 /* Base Colors */
 :root {
   --pink: #F2CDD8;
-  --green: #97B98A;
-  --dark-green: #2E4E1F;
+  --green: #4A7C2C; /* Darker green for better contrast */
+  --dark-green: #1B2E13; /* Even darker for text */
   --white: #FFFFFF;
   --light-pink: #F9E5EB;
   --shadow: rgba(46, 78, 31, 0.1);
@@ -314,7 +314,9 @@ header nav a.phone-link i {
 
 .btn-primary {
   background: var(--green);
-  color: var(--white);
+  color: #fff;
+  border: 2px solid var(--green);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
 
 .btn-primary:hover {
@@ -497,14 +499,14 @@ header nav a.phone-link i {
 }
 
 .status-badge.open {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  color: white;
+  background: linear-gradient(135deg, #357A38, #20591A);
+  color: #fff;
   animation: glow 2s ease-in-out infinite;
 }
 
 .status-badge.closed {
-  background: linear-gradient(135deg, #9e9e9e, #757575);
-  color: white;
+  background: linear-gradient(135deg, #757575, #444);
+  color: #fff;
 }
 
 .status-dot {
@@ -571,7 +573,8 @@ header nav a.phone-link i {
 .info-section p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--dark-green);
+  color: #1B2E13;
+  background: #F2F9F0;
   margin-bottom: 15px;
 }
 
@@ -602,13 +605,16 @@ header nav a.phone-link i {
 }
 
 .info-section a {
-  color: var(--green);
+  color: #20591A;
+  text-decoration: underline;
+  font-weight: 600;
   font-weight: 600;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s ease;
 }
 
 .info-section a:hover {
+  color: var(--green);
   border-bottom-color: var(--green);
 }
 
@@ -671,6 +677,7 @@ header nav a.phone-link i {
 .preorder-intro {
   font-size: 1.2rem;
   color: var(--dark-green);
+  background: #F2F9F0;
   margin-bottom: 40px;
   font-weight: 500;
 }
