@@ -98,7 +98,7 @@ header.site-header {
 .hamburger-line {
   width: 30px;
   height: 3px;
-  background: var(--white);
+  background: transparent;
   border-radius: 3px;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
@@ -176,7 +176,7 @@ body.menu-open {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--white);
+  background: transparent;
   transition: width 0.3s ease;
 }
 
@@ -189,9 +189,12 @@ body.menu-open {
 }
 
 .nav-menu a.phone-link {
-  background: var(--dark-green);
+  background: var(--green);
+  color: #fff;
   padding: 10px 20px;
   border-radius: 25px;
+  border: 2px solid var(--dark-green);
+  box-shadow: 0 2px 8px rgba(76,124,44,0.08);
   transition: all 0.3s ease;
 }
 
@@ -200,8 +203,8 @@ body.menu-open {
 }
 
 .nav-menu a.phone-link:hover {
-  background: var(--light-pink);
-  color: var(--dark-green);
+  background: var(--dark-green);
+  color: #fff;
   transform: scale(1.05);
 }
 
@@ -326,7 +329,7 @@ header nav a.phone-link i {
 }
 
 .btn-secondary {
-  background: var(--white);
+  background: transparent;
   color: var(--dark-green);
   border: 3px solid var(--green);
 }
@@ -366,7 +369,7 @@ header nav a.phone-link i {
 
 .info-section {
   padding: 60px 50px;
-  background: var(--pink);
+   background: none;
   margin: 30px auto;
   max-width: 900px;
   border-radius: 20px;
@@ -442,7 +445,7 @@ header nav a.phone-link i {
 .highlight {
   text-align: center;
   padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(151, 185, 138, 0.08);
   border-radius: 15px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
@@ -513,7 +516,7 @@ header nav a.phone-link i {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: white;
+  background: transparent;
   box-shadow: 0 0 8px rgba(255,255,255,0.8);
 }
 
@@ -573,8 +576,8 @@ header nav a.phone-link i {
 .info-section p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #1B2E13;
-  background: #F2F9F0;
+   color: #1B2E13;
+   background: none;
   margin-bottom: 15px;
 }
 
@@ -677,7 +680,7 @@ header nav a.phone-link i {
 .preorder-intro {
   font-size: 1.2rem;
   color: var(--dark-green);
-  background: #F2F9F0;
+   background: none;
   margin-bottom: 40px;
   font-weight: 500;
 }
@@ -697,7 +700,7 @@ header nav a.phone-link i {
 }
 
 .preorder-image-wrapper {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(151, 185, 138, 0.08);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 6px 25px var(--shadow-md);
@@ -708,7 +711,7 @@ header nav a.phone-link i {
 }
 
 .croissants-image-wrapper {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(151, 185, 138, 0.08);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 6px 25px var(--shadow-md);
@@ -1030,7 +1033,7 @@ header nav a.phone-link i {
 }
 
 .preorder-item {
-  background: rgba(255, 255, 255, 0.6);
+  background: none;
   padding: 25px;
   border-radius: 15px;
   text-align: center;
@@ -1039,7 +1042,7 @@ header nav a.phone-link i {
 }
 
 .croissants-item {
-  background: rgba(255, 255, 255, 0.6);
+  background: none;
   padding: 25px;
   border-radius: 15px;
   text-align: center;
@@ -1256,7 +1259,7 @@ header nav a.phone-link i {
 }
 
 .menu-column {
-  background: rgba(255, 255, 255, 0.3);
+  background: none;
   padding: 35px;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(46, 78, 31, 0.12);
@@ -1305,7 +1308,7 @@ header nav a.phone-link i {
 }
 
 .menu-item:hover {
-  background: rgba(151, 185, 138, 0.15);
+  background: none;
   padding-left: 20px;
   border-bottom-style: solid;
 }
@@ -1345,7 +1348,7 @@ header nav a.phone-link i {
 .menu-special {
   margin-bottom: 35px;
   padding: 28px;
-  background: linear-gradient(135deg, rgba(151, 185, 138, 0.25) 0%, rgba(151, 185, 138, 0.15) 100%);
+  background: none;
   border-radius: 15px;
   border: 2px solid var(--green);
   box-shadow: 0 4px 15px rgba(151, 185, 138, 0.2);
@@ -1408,7 +1411,7 @@ header nav a.phone-link i {
 }
 
 .menu-special li.today-special {
-  background: linear-gradient(90deg, rgba(151, 185, 138, 0.4), rgba(151, 185, 138, 0.15));
+  background: none;
   padding: 12px 12px 12px 35px;
   margin-left: -12px;
   margin-right: -12px;
@@ -1481,7 +1484,7 @@ header nav a.phone-link i {
   font-size: 0.95rem;
   opacity: 0.8;
   font-style: italic;
-  background: rgba(151, 185, 138, 0.15);
+  background: none;
   border-radius: 50px;
   border: 1px dashed var(--green);
 }
@@ -1653,7 +1656,7 @@ footer.footer p {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(151, 185, 138, 0.08);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
   }
